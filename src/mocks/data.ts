@@ -4,7 +4,7 @@ import { factory, primaryKey } from '@mswjs/data';
 // However, this method is not recommended as it applies to all Event Emitters.
 //
 // import { EventEmitter } from 'events';
-// EventEmitter.defaultMaxListeners = 0;
+// EventEmitter.defaultMaxListeners = 11;
 
 export const db = factory({
   model1: {
@@ -44,7 +44,7 @@ export const db = factory({
 });
 
 // If you do model.create, more warnings will occur.
-[...Array(5)].forEach((_, i) => {
+[...Array(3)].forEach((_, i) => {
   db.model1.create({id: i.toString()})
 })
 
