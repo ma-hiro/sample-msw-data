@@ -1,5 +1,11 @@
 import { factory, primaryKey } from '@mswjs/data';
 
+// Enable the following line to suppress MaxListenersExceededWarning when defining many models using mswjs
+// However, this method is not recommended as it applies to all Event Emitters.
+//
+// import { EventEmitter } from 'events';
+// EventEmitter.defaultMaxListeners = 0;
+
 export const db = factory({
   model1: {
     id: primaryKey(String),
@@ -31,10 +37,8 @@ export const db = factory({
   model10: {
     id: primaryKey(String),
   },
+  // Warning disappears after removing model11
   model11: {
-    id: primaryKey(String),
-  },
-  model12: {
     id: primaryKey(String),
   },
 });
