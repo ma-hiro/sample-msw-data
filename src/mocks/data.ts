@@ -43,4 +43,9 @@ export const db = factory({
   },
 });
 
+// If you do model.create, more warnings will occur.
+[...Array(5)].forEach((_, i) => {
+  db.model1.create({id: i.toString()})
+})
+
 export default db;
